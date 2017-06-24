@@ -1,0 +1,130 @@
+@deployments-table-service-height: @expanding-table-line-height + @deployments-table-service-path-line-height;
+@deployments-table-service-margin-top: @base-spacing-unit * 1/4;
+
+@deployments-table-service-path-font-size: @small-font-size;
+@deployments-table-service-path-line-height: 0.9rem;
+@deployments-table-service-path-padding-left: @base-spacing-unit * 1/2 + @icon-mini-width + @base-spacing-unit * 1/4;
+
+& when (@deployments-table-enabled) {
+
+  .modal {
+
+    &--deployments {
+
+      .modal-body-wrapper {
+        flex-basis: 480px;
+      }
+    }
+  }
+
+  .button {
+
+    &--deployments {
+
+      &__loader,
+      &__copy {
+        display: inline-block;
+      }
+
+      &__loader {
+
+        .line-spin-fade-loader {
+          height: 100%;
+          width: 100%;
+        }
+      }
+
+      &__copy {
+        vertical-align: middle;
+      }
+    }
+  }
+
+  .deployments-table {
+    table-layout: fixed;
+
+    &-column {
+
+      &-id {
+        width: auto;
+      }
+
+      &-start-time {
+        display: none;
+        width: 140px;
+      }
+
+      &-status {
+        width: 150px;
+      }
+
+      &-actions {
+        width: 40px;
+
+        .icon {
+          display: block;
+        }
+      }
+    }
+
+    .deployment-service-path {
+      font-size: @deployments-table-service-path-font-size;
+      line-height: @deployments-table-service-path-line-height;
+      padding-left: @deployments-table-service-path-padding-left;
+
+      a {
+        color: inherit;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    .expanding-table-child {
+      height: @deployments-table-service-height;
+      margin-top: @deployments-table-service-margin-top;
+    }
+  }
+}
+
+& when (@deployments-table-enabled) and (@layout-screen-small-enabled) {
+
+  @media (max-width: @layout-screen-small-max-width) {
+
+    .modal {
+
+      &--deployments {
+
+        &.modal-large {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+& when (@deployments-table-enabled) and (@layout-screen-medium-enabled) {
+
+  @media (min-width: @layout-screen-medium-min-width) {
+
+    .deployments-table {
+
+      &-column {
+
+        &-id {
+          width: auto;
+        }
+
+        &-start-time {
+          display: table-cell;
+
+          col& {
+            display: table-column;
+          }
+        }
+      }
+    }
+  }
+}

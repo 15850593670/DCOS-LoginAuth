@@ -1,0 +1,5 @@
+loginAuthentication/node_modules
+loginAuthentication/.DS_Store
+loginAuthentication/npm-debug.log
+dcos-ui/node_modules
+.DS_Store

@@ -1,0 +1,49 @@
+.loader {
+
+  .loader-element {
+    background: @loaders-elements-background;
+  }
+
+  .inverse {
+
+    .loader-element {
+      background: @loaders-elements-background-inverse;
+    }
+  }
+
+  .ball-scale {
+    height: 69px;
+    width: 69px;
+  }
+
+  .loader {
+
+    &--mini {
+      transform: scale(0.25, 0.25);
+    }
+
+    &--small {
+      transform: scale(0.5, 0.5);
+
+      &.ball-scale {
+        height: 34.5px;
+        width: 34.5px;
+      }
+    }
+
+    &--flip-horizontal {
+      transform: rotate3d(0, 1, 0, 180deg);
+
+      &.loader {
+
+        &--mini {
+          transform: scale(0.25, 0.25) rotate3d(0, 1, 0, 180deg);
+        }
+
+        &--small {
+          transform: scale(0.5, 0.5) rotate3d(0, 1, 0, 180deg);
+        }
+      }
+    }
+  }
+}

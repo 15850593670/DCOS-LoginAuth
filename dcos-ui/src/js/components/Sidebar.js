@@ -24,13 +24,13 @@ const defaultMenuItems = [
   "/dashboard",
   "/services",
   "/jobs",
-  "/catalog",
+  // "/catalog",
   "/nodes",
-  "/networking",
+  // "/networking",
   "/secrets",
   "/overview",
   "/components",
-  "/settings",
+  // "/settings",
   "/organization"
 ];
 

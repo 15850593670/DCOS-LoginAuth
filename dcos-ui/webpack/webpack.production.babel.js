@@ -19,6 +19,9 @@ function addImageOptimizer(loader) {
   );
 }
 
+const devServer = {
+  proxy: require("./proxy.dev.js")
+};
 const REPLACEMENT_VARS = {
   VERSION: packageInfo.version,
   ENV: process.env.NODE_ENV
@@ -35,6 +38,7 @@ module.exports = Object.assign({}, webpackConfig, {
   },
   devtool: "#source-map",
   production: true,
+  devServer,
   output: {
     path: "./dist",
     filename: "./[name].[hash].js"

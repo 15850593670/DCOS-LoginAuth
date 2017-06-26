@@ -34,10 +34,19 @@ module.exports = {
   },
   //services marathonAPI
   '/service/marathon/v2/*': {
-    target: 'http://114.212.189.138:8080',
+    target: 'http://marathon.njuics.cn',
     changeOrigin: true,
     rewrite: function (req) {
       req.url = req.url.replace(/\/service\/marathon/, '');
+      // console.log('req info ', req.headers.host)
+    },
+    logLevel: 'debug'
+  },
+  '/service/metronome/v1/*': {
+    target: 'http://metronome.njuics.cn',
+    changeOrigin: true,
+    rewrite: function (req) {
+      req.url = req.url.replace(/\/service\/metronome/, '');
       // console.log('req info ', req.headers.host)
     },
     logLevel: 'debug'

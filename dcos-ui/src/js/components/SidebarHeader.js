@@ -127,17 +127,18 @@ class SidebarHeader extends mixin(StoreMixin) {
         id: "documentation",
         onClick() {
           SidebarActions.close();
-          global.open(MetadataStore.buildDocsURI("/"), "_blank");
+          global.open("http://dc.njuics.cn/docs/", "_blank")
+          // global.open(MetadataStore.buildDocsURI("/"), "_blank");
         }
-      },
-      {
-        html: "Install CLI",
-        id: "install-cli",
-        onClick() {
-          SidebarActions.close();
-          SidebarActions.openCliInstructions();
-        }
-      }
+      }//,
+      // {
+      //   html: "Install CLI",
+      //   id: "install-cli",
+      //   onClick() {
+      //     SidebarActions.close();
+      //     SidebarActions.openCliInstructions();
+      //   }
+      // }
     ];
 
     return (

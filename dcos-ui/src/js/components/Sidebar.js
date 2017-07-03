@@ -27,11 +27,11 @@ const defaultMenuItems = [
   // "/catalog",
   "/nodes",
   // "/networking",
-  "/secrets",
+  // "/secrets",
   "/overview",
   "/components",
   // "/settings",
-  "/organization"
+  // "/organization"
 ];
 
 const { Hooks } = PluginSDK;

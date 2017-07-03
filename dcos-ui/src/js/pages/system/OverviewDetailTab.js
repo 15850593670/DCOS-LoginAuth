@@ -316,14 +316,14 @@ class OverviewDetailTab extends mixin(StoreMixin) {
             <ConfigurationMapHeading className="flush-top">
               Cluster <FormattedMessage id="COMMON.DETAILS" />
             </ConfigurationMapHeading>
-            <ConfigurationMapHeading level={2}>
+            {/*<ConfigurationMapHeading level={2}>
               <FormattedMessage id="COMMON.GENERAL" />
             </ConfigurationMapHeading>
             {this.getClusterDetails()}
             <ConfigurationMapHeading level={2}>
               Mesos <FormattedMessage id="COMMON.DETAILS" />
             </ConfigurationMapHeading>
-            {this.getMesosDetails()}
+            {this.getMesosDetails()}*/}
             {marathonDetails}
             <MountService.Mount type="OverviewDetailTab:AdditionalClusterDetails" />
           </ConfigurationMap>
